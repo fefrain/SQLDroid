@@ -29,10 +29,25 @@ You can find an example of how to use SQLDroid with ActiveRecord on Ruboto here:
 
 https://github.com/ruboto/ruboto/wiki/Tutorial%3A-Using-an-SQLite-database-with-ActiveRecord
 
+### Use inside an Android Maven project
+
+If you have an Android Maven project that uses the android-maven-plugin (https://code.google.com/p/maven-android-plugin/), you can install SQLDroid on your local repository, then include it as a apklib dependency:
+
+```
+<dependency>
+	<groupId>org.sqldroid</groupId>
+	<artifactId>sqldroid</artifactId>
+	<version>VERSION</version>
+	<type>apklib</type>
+</dependency>
+```
 ## Building
 
-The SQLDroid JAR file is a straight collection of the compiled classes.  If you have Ruby installed,
-you can generate the JAR using
+The SQLDroid JAR file is a straight collection of the compiled classes.  
+
+### Building with Ruby
+
+If you have Ruby installed, you can generate the JAR using
 
 ```rake jar```
 
@@ -43,3 +58,11 @@ To make a gem for use with Ruboto run
 To release the gem to rubygems.org (requires permissions on rubygems.org) run
 
 ```rake release```
+
+###Building with Maven
+
+If you have Maven installed, you can generate the JAR using
+
+```mvn clean package```
+
+The generated JAR file will be located inside the ```target``` folder
